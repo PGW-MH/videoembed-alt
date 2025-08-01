@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video player - Pleasant Goat Wiki</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <a href="#" id="back-link" class="back-link">← Back to article</a>
+            <a href="https://xyy.miraheze.org" class="home-link">
+                <img src="https://avatars.githubusercontent.com/u/223965796?s=200&v=4" alt="Logo" class="logo">
+                <span class="title">Pleasant Goat Wiki</span>
+            </a>
+        </div>
+        <div class="header-right">
+            <button class="theme-toggle" id="theme-toggle" title="Toggle theme">🌞</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="video-wrapper" id="video-container"></div>
+    </main>
+    <script src="/static/main.js"></script>
+    <script>
+        const bvid = urlParams.get('bvid');
+        const page = urlParams.get('page') || 1;
+
+        if (bvid) {
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://player.bilibili.com/player.html?bvid=${encodeURIComponent(bvid)}&page=${encodeURIComponent(page)}&autoplay=0`;
+            iframe.allowFullscreen = true;
+            document.getElementById('video-container').appendChild(iframe);
+        } else {
+            document.getElementById('video-container').innerText = 'Invalid video URL.';
+        }
+    </script>
+</body>
+
+</html>

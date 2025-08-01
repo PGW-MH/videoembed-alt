@@ -1,17 +1,17 @@
 :root {
-    --bg-color: #EEF4EE;
+    --bg-color: #eef4ee;
     --text-color: #000100;
-    --header-bg: #C8DFC8;
-    --border-color: #B8CEB8;
+    --header-bg: #c8dfc8;
+    --border-color: #b8ceb8;
     --link-color: #008421;
 }
 
 [data-theme='dark'] {
-    --bg-color: #09080D;
-    --text-color: #BDB9DC;
-    --header-bg: #1A172C;
-    --border-color: #2C293D;
-    --link-color: #8169DC;
+    --bg-color: #09080d;
+    --text-color: #bdb9dc;
+    --header-bg: #1a172c;
+    --border-color: #2c293d;
+    --link-color: #8169dc;
 }
 
 body {
@@ -69,15 +69,19 @@ header {
 }
 
 .logo {
-    width: 28px;
-    height: 28px;
-    border-radius: 6px;
+    width: 36px;
+    height: 36px;
 }
 
 .title {
     font-weight: bold;
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     white-space: nowrap;
+}
+@media (max-width: 1119px) {
+    .title {
+        display: none;
+    }
 }
 
 .theme-toggle {
